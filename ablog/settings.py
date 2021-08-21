@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heoku
-import dj_database
+import django_heroku
+import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -55,8 +55,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    ]
+
 
 ROOT_URLCONF = 'ablog.urls'
+
+
 
 TEMPLATES = [
     {
@@ -133,7 +137,7 @@ STATICFILES_DIRS = [
 ]
 
 
-STATICFILES_STORGE = 'whitenoise.storge.CampressedManifestStaticFilesStorge'
+STATICFILES_STORAGE = 'whitenoise.storge.CampressedManifestStaticFilesStorge'
 
 
 # Default primary key field type
