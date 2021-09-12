@@ -10,10 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
-import django_heroku
+from pathlib import Path
+
 import dj_database_url
+import django_heroku
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -83,6 +84,10 @@ WSGI_APPLICATION = 'ablog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 
 DATABASES = {
     'default': {
