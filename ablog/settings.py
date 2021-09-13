@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'theblog',
     'members',
     'ckeditor',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -85,16 +86,16 @@ WSGI_APPLICATION = 'ablog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+#DATABASES = {}
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+#DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
 
-#3DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-#}
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME':  'postgresql',
+    }
+}
 
 
 # Password validation
