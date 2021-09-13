@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'theblog',
     'members',
     'ckeditor',
-    'django_extensions',
+    
 ]
 
 MIDDLEWARE = [
