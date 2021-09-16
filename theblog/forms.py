@@ -6,8 +6,8 @@ choices = Category.objects.all().values_list('name', 'name')
 
 choice_list = []
 
-for item in choices:
-     choice_list.append(item)
+#for item in choices:
+  #   choice_list.append(item)
 
 
 #choices = [('coding', 'coding'), ('sports', 'sports'), ('entertaiment','entertaiment')]
@@ -26,6 +26,16 @@ class PostForm(forms.ModelForm):
            'body': forms.Textarea(attrs={'class': 'form-control'}),
            'snippet': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        choices = Category.objects.all().values_list('name', 'name')
+        choice_list = []
+        
+        for item in choices:
+            choice_list.append(item)
+        self.fields['category'].choices = choice_list
 
 
 class EditForm(forms.ModelForm):
