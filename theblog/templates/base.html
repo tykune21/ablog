@@ -42,7 +42,7 @@
     <ul class="navbar-nav mr-auto">
       <!-- Category Menu Code -->
 
-
+        {% if cat_menu  %}
 
       <li class="nav-item dropdown">
         <a
@@ -55,10 +55,11 @@
           aria-expanded="false">
           Categories
         </a>
-
+        {% else %}
         <div
           class="dropdown-menu"
           aria-labelledby="navbarDropdown">
+
           {% for item in cat_menu %}
 
           <a
@@ -70,7 +71,7 @@
           {% endfor %}
         </div>
       </li>
-
+          {% endif %}
 
 
       <li
