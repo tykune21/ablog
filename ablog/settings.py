@@ -92,8 +92,8 @@ WSGI_APPLICATION = 'ablog.wsgi.application'
 
 DATABASES = {
    'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME':  'postgresql',
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR/ 'sqlite3',
     }
 }
 
